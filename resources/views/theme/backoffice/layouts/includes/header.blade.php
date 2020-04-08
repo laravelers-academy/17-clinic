@@ -7,7 +7,7 @@
                     <li>
                         <h1 class="logo-wrapper">
                             <a class="brand-logo darken-1" href="index.html">
-                                <img alt="materialize logo" src="images/logo/materialize-logo.png">
+                                <img alt="materialize logo" src="/images/logo/materialize-logo.png">
                                 <span class="logo-text hide-on-med-and-down">Clinic</span>
                             </a>
                         </h1>
@@ -30,7 +30,7 @@
                     <li>
                         <a class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown" href="javascript:void(0);">
                             <span class="avatar-status avatar-online">
-                                <img alt="avatar" src="images/avatar/avatar-7.png">
+                                <img alt="avatar" src="/images/avatar/avatar-7.png">
                                 <i></i>
                             </span>
                         </a>

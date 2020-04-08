@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Role;
+use App\Http\Requests\Role\StoreRequest;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -24,7 +25,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return true;
+        return view('theme.backoffice.pages.role.create');
     }
 
     /**
@@ -33,9 +34,11 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request, Role $role)
     {
-        //
+        $role = $role->store($request);
+
+        return 'Se ha almacenado el rol';
     }
 
     /**
