@@ -19,7 +19,7 @@
             <div class="col s12 m8 offset-m2">
                 <div class="card-panel">
                     <h4 class="header2">
-                        Basic Form
+                        Crear rol.
                     </h4>
                     <div class="row">
                         <form class="col s12" method="POST" action="{{ route('backoffice.role.store') }}">

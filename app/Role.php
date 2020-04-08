@@ -24,6 +24,15 @@ class Role extends Model
 
     // ALMACENAMIENTO
 
+        public function store($request)
+        {
+            $slug = str_slug($request->name, '-');
+
+            return self::create($request->all() + [
+                'slug' => $slug
+            ]);
+        }
+
     // VALIDACIÓN
 
     // RECUPERACIÓN DE  INFORMACIÓN

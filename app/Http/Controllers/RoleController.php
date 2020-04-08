@@ -38,7 +38,7 @@ class RoleController extends Controller
     {
         $role = $role->store($request);
 
-        return 'Se ha almacenado el rol';
+        return redirect()->route('backoffice.role.show', $role);
     }
 
     /**
@@ -49,7 +49,9 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view('theme.backoffice.pages.role.show', [
+            'role' => $role
+        ]);
     }
 
     /**
