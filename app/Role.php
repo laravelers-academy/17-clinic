@@ -28,7 +28,20 @@ class Role extends Model
         {
             $slug = str_slug($request->name, '-');
 
+            alert('Éxito','El rol se ha creado', 'success');
+
             return self::create($request->all() + [
+                'slug' => $slug
+            ]);
+        }
+
+        public function my_update($request)
+        {
+            $slug = str_slug($request->name, '-');
+
+            alert('Éxito','El rol se ha actualizado', 'success');
+
+            self::update($request->all() + [
                 'slug' => $slug
             ]);
         }
