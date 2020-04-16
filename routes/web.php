@@ -19,4 +19,6 @@ Route::group(['middleware' => ['auth'], 'as' => 'backoffice.'], function(){
 
 	Route::resource('role', 'RoleController');
 
+	Route::resource('permission', 'PermissionController');
+
 });

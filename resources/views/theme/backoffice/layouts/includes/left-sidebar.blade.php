@@ -67,6 +67,17 @@
                     </a>
                 </li>
 
+                <li class="bold">
+                    <a class="waves-effect waves-cyan" href="{{ route('backoffice.permission.index') }}">
+                        <i class="material-icons">
+                            vpn_key
+                        </i>
+                        <span class="nav-text">
+                            Permisos del Sistema
+                        </span>
+                    </a>
+                </li>
+
             </ul>
         </li>
     </ul>
