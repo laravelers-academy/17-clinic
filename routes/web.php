@@ -17,6 +17,8 @@ Auth::routes(['verify' => true]);
 // BACKOFFICE
 Route::group(['middleware' => ['auth'], 'as' => 'backoffice.'], function(){
 
+	Route::resource('user', 'UserController');
+
 	Route::resource('role', 'RoleController');
 
 	Route::resource('permission', 'PermissionController');

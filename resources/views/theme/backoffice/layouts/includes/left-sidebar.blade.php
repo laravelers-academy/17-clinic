@@ -57,6 +57,17 @@
                 </li>
 
                 <li class="bold">
+                    <a class="waves-effect waves-cyan" href="{{ route('backoffice.user.index') }}">
+                        <i class="material-icons">
+                            users
+                        </i>
+                        <span class="nav-text">
+                            Usuarios del Sistema
+                        </span>
+                    </a>
+                </li>
+
+                <li class="bold">
                     <a class="waves-effect waves-cyan" href="{{ route('backoffice.role.index') }}">
                         <i class="material-icons">
                             perm_identity
