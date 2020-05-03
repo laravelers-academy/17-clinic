@@ -11,7 +11,7 @@
 @endsection
 
 @section('dropdown_settings')
-    <li><a href="{{ route('backoffice.user.create') }}" class="grey-text text-darken-2">Crear rol</a></li>
+    <li><a href="{{ route('backoffice.user.create') }}" class="grey-text text-darken-2">Crear usuario</a></li>
 @endsection
 
 @section('content')

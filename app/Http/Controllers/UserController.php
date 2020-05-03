@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -46,9 +47,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('theme.backoffice.pages.user.show', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -83,5 +86,51 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Mostrar formualrio para asignar rol
+     * 
+     */
+    public function assign_role(User $user)
+    {
+        return view('theme.backoffice.pages.user.assign_role', [
+            'user' => $user,
+            'roles' => Role::all()
+        ]);
+    }
+
+    /**
+     * Asignar rol en la base de datos
+     * 
+     */
+    public function role_assignment(Request $request, User $user)
+    {
+        $user->roles()->sync($request->roles);
+        alert('Exito', 'Roles asignador', 'success');
+        return redirect()->route('backoffice.user.show', $user);
+    }
+
+    /**
+     * Mostrar formualrio para asignar permisos
+     * 
+     */
+    public function assign_permission(User $user)
+    {
+        return view('theme.backoffice.pages.user.assign_permission', [
+            'user' => $user,
+            'roles' => $user->roles
+        ]);
+    }
+
+    /**
+     * Asignar permisos en la base de datos
+     * 
+     */
+    public function permission_assignment(Request $request, User $user)
+    {
+        $user->permissions()->sync($request->permissions);
+        alert('Exito', 'Roles asignador', 'success');
+        return redirect()->route('backoffice.user.show', $user);
     }
 }
